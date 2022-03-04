@@ -3,9 +3,10 @@ import { Route, useParams } from "react-router-dom";
 import { Container, Row, Col, Image, Table } from "react-bootstrap";
 
 export function CharacterPage() {
-
+	
+	const {characterId} = useParams();
     const [info, setInfo] = useState([]);
-    const {characterId} = useParams();
+    
 	console.log(characterId);
 	
 	 useEffect(() => { 
