@@ -28,6 +28,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 				.then(body => setStore({character: body.results}))
 				.catch(error => console.log("error", error));
 			},
+			getPlanet: () => {
+				fetch("https://www.swapi.tech/api/planets")
+				.then(res => res.json())
+				.then(body => setStore({planet: body.results}))
+				.catch(error => console.log("error", error));
+			},
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");

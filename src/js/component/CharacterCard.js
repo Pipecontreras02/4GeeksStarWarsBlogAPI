@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import { Button, Card, Container, Row } from 'react-bootstrap';
@@ -12,7 +12,7 @@ const CharacterCard = () => {
     console.log(store.character)
     return (
         <Container fluid>
-            <Row className='scroller'>
+            <Row>
                 {store.character.map((character, id) =>{
                 let idd = id+1;
                  let cImg= "https://starwars-visualguide.com/assets/img/characters/"+ idd +".jpg"
