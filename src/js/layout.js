@@ -7,8 +7,9 @@ import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 
-import { Navbar } from "./component/navbar";
+import { Navbars } from "./component/navbar";
 import { Footer } from "./component/footer";
+import { CharacterPage } from "./views/Character";
 
 
 //create your first component
@@ -21,13 +22,13 @@ const Layout = () => {
 		<div>
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
-					<Navbar />
+					<Navbars />
 					<Switch>
 						<Route exact path="/">
 							<Home />
 						</Route>
-						<Route exact path="/demo">
-							<Demo />
+						<Route exact path="/Character/:characterId">
+							<CharacterPage />
 						</Route>
 						<Route exact path="/single/:theid">
 							<Single />

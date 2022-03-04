@@ -4,7 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			character: [],
 			planet: [],
 			vehicle: [],
-			favourite: [],
+			watchlist: [],
 		
 			demo: [
 				{
@@ -21,6 +21,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		},
 		actions: 
 			{
+				
 			getCharacter: () => {
 				fetch("https://www.swapi.tech/api/people")
 				.then(res => res.json())
