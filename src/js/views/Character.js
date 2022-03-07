@@ -58,7 +58,7 @@ export function CharacterPage() {
 									</tr>
 									<tr>
 									<td>Weight:</td>
-									<td>{info.mass}</td>
+									<td>{info.mass} Kg</td>
 									</tr>
 								</tbody>
 							</Table>

@@ -2,6 +2,7 @@ import React from "react";
 import "../../styles/home.css";
 import { Container } from 'react-bootstrap';
 import CharacterCard from "../component/CharacterCard";
+import VehicleCard from "../component/VehicleCard";
 import PlanetCard from "../component/PlanetCard";
 
 
@@ -13,6 +14,8 @@ export const Home = () => (
 			<CharacterCard />
 			<h1>Planets</h1>
 			<PlanetCard />
+			<h1>Vehicles</h1>
+			<VehicleCard />
 		</Container>
 		</>
 	</div>

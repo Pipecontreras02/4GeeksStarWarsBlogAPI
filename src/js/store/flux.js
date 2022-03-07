@@ -6,22 +6,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 			vehicle: [],
 			watchlist: [],
 		
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
 		},
 		actions: 
-			{
-				
+			{ 
 			getCharacter: () => {
 				fetch("https://www.swapi.tech/api/people")
 				.then(res => res.json())
@@ -33,6 +20,23 @@ const getState = ({ getStore, getActions, setStore }) => {
 				.then(res => res.json())
 				.then(body => setStore({planet: body.results}))
 				.catch(error => console.log("error", error));
+			},
+			getVehicle: () => {
+				fetch("https://www.swapi.tech/api/vehicles")
+				.then(res => res.json())
+				.then(body => setStore({vehicle: body.results}))
+				.catch(error => console.log("error", error));
+			},
+			addItem: (name) => {
+				const store = getStore();
+				console.log(name);
+				setStore({watchlist: store.watchlist.concat(name)})
+			},
+
+			removeItem: (idm) => {
+				const store = getStore();
+				const wList = store.watchlist.filter(key => key !== idm)
+				setStore({watchlist:wList})
 			},
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {

@@ -8,7 +8,7 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 
 const PlanetCard = () => {
-    const {store} = useContext(Context);
+    const {store, actions} = useContext(Context);
     console.log(store.planet)
     return (
         <Container fluid>
@@ -30,7 +30,7 @@ const PlanetCard = () => {
                             </Button>
                         </Link>
                         
-                        <Button variant="danger"><FontAwesomeIcon icon={faHeart} /></Button>
+                        <Button variant="danger"><FontAwesomeIcon icon={faHeart} onClick={()=> {actions.addItem(planet.name)}} /></Button>
                     </Card.Body>
                 </Card>)})
                 }

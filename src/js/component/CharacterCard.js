@@ -8,7 +8,7 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 
 const CharacterCard = () => {
-    const {store} = useContext(Context);
+    const {store,actions} = useContext(Context);
     console.log(store.character)
     return (
         <Container fluid>
@@ -30,7 +30,7 @@ const CharacterCard = () => {
                             </Button>
                         </Link>
                         
-                        <Button variant="danger"><FontAwesomeIcon icon={faHeart} /></Button>
+                        <Button variant="danger"><FontAwesomeIcon icon={faHeart} onClick={()=> {actions.addItem(character.name)}}/></Button>
                     </Card.Body>
                 </Card>)})
                 }

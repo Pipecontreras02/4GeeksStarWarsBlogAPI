@@ -1,14 +1,21 @@
 import React, { useContext } from "react";
-import { Context } from '../store/appContext'
 import { Link } from "react-router-dom";
 import { Button, Container, Navbar, Dropdown } from 'react-bootstrap';
+import "../../styles/home.css";
+import { Context } from '../store/appContext'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
+
 export const Navbars = () => {
+
+	const {store, actions} = useContext(Context);
+
 	return (
 		
-		<Navbar bg="light" expand="lg">
+		<Navbar bg="dark" expand="lg">
  		 <Container>
 		  <Link to="/">
-   			 <Navbar.Brand href="#home">
+   			 <Navbar.Brand >
 				<img alt=""
 				src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1280px-Star_Wars_Logo.svg.png"height="90" width="100"
         		/>
@@ -20,9 +27,21 @@ export const Navbars = () => {
 			</Dropdown.Toggle>
 
 			<Dropdown.Menu>
-				<Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-				<Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-				<Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+				{
+					store.watchlist.map((watchlist, id) => {
+						return(
+							<>
+					<Dropdown.Item key={id}>
+						{watchlist} <FontAwesomeIcon
+						icon={faXmark}
+						onClick={() => actions.removeItem(watchlist.id)}
+					/>
+					</Dropdown.Item></>
+						)
+					})
+				}
+				
+				
 			</Dropdown.Menu>
 			</Dropdown>
   		</Container>
