@@ -27,16 +27,19 @@ const getState = ({ getStore, getActions, setStore }) => {
 				.then(body => setStore({vehicle: body.results}))
 				.catch(error => console.log("error", error));
 			},
-			addItem: (name) => {
+			addItem: (char) => {
 				const store = getStore();
-				console.log(name);
-				setStore({watchlist: store.watchlist.concat(name)})
+				let list = store.watchlist;
+				setStore({watchlist: list.concat(char)})
+				console.log(list)
 			},
 
-			removeItem: (idm) => {
+			removeItem: (id) => {
 				const store = getStore();
-				const wList = store.watchlist.filter(key => key !== idm)
-				setStore({watchlist:wList})
+				const wList = store.watchlist.filter(key => key !== id)
+				console.log(wList);
+				console.log("Yeaah");
+				setStore({watchlist: wList})
 			},
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {

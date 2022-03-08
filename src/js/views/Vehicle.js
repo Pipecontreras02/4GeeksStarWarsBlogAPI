@@ -38,7 +38,7 @@ export function VehiclePage() {
 									<tr>
 									<td>Vehicle Class:</td>
 									<td>{info.vehicle_class}</td>
-									<td></td>
+								
 									</tr>
 									<tr> 
 									<td>Manufacturer:</td>

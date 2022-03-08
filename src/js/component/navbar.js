@@ -23,18 +23,20 @@ export const Navbars = () => {
 		  </Link>
 		  <Dropdown>
 			<Dropdown.Toggle variant="success" id="dropdown-basic">
-				Watchlist
+			Watchlist<p>{store.watchlist.length}</p>
 			</Dropdown.Toggle>
 
 			<Dropdown.Menu>
 				{
 					store.watchlist.map((watchlist, id) => {
+						
 						return(
 							<>
 					<Dropdown.Item key={id}>
-						{watchlist} <FontAwesomeIcon
+						{watchlist}
+						<FontAwesomeIcon
 						icon={faXmark}
-						onClick={() => actions.removeItem(watchlist.id)}
+						onClick={() => actions.removeItem(watchlist)}
 					/>
 					</Dropdown.Item></>
 						)

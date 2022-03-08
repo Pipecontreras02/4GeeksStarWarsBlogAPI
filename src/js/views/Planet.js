@@ -34,7 +34,7 @@ export function PlanetPage() {
 									<tr>
 									<td>Diameter:</td>
 									<td>{info.diameter} kms</td>
-									<td></td>
+									
 									</tr>
 									<tr> 
 									<td>Rotation Period:</td>

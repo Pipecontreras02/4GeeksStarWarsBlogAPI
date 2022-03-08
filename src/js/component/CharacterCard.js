@@ -30,7 +30,12 @@ const CharacterCard = () => {
                             </Button>
                         </Link>
                         
-                        <Button variant="danger"><FontAwesomeIcon icon={faHeart} onClick={()=> {actions.addItem(character.name)}}/></Button>
+                        <Button variant="danger">
+                            <FontAwesomeIcon 
+                            icon={faHeart} 
+                            onClick={()=> {actions.addItem(character.name)}}
+                            />
+                        </Button>
                     </Card.Body>
                 </Card>)})
                 }

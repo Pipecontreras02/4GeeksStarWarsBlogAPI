@@ -30,7 +30,11 @@ const PlanetCard = () => {
                             </Button>
                         </Link>
                         
-                        <Button variant="danger"><FontAwesomeIcon icon={faHeart} onClick={()=> {actions.addItem(planet.name)}} /></Button>
+                        <Button variant="danger">
+                            <FontAwesomeIcon 
+                            icon={faHeart} 
+                            onClick={()=> {actions.addItem(planet.name)}}/>
+                            </Button>
                     </Card.Body>
                 </Card>)})
                 }
